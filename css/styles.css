@@ -12781,12 +12781,113 @@ p {
   font-size: 2rem;
   opacity: 0;
   transform: translateX(400px);
-  transition: opacity 2.5s ease-in-out, transform 2.5s ease-in-out;
+  transition: opacity 2.5s ease-in-out, transform 1.0s ease-in-out;
 }
 .vision.in-view{
   opacity: 1;
   transform: translateX(0);
 }
+/* mission */
+.office-environments {
+  background: #EEF6FF;
+  margin: 0 15px
+}
+
+.office-environments .environments-wrapper {
+  margin-top: -100px;
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+  padding-bottom: 100px
+}
+.section-bg02 {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left
+  
+}
+.section-tittle p {
+  margin-bottom: 25px
+}
+
+.section-tittle.section-tittle2 h2 {
+  color: #fff
+}
+
+.section-tittle.section-tittle2 p {
+  color: #fff
+}
+.section-tittle span {
+  margin-bottom: 20px;
+  display: block;
+  color: #70D76A;
+  text-transform: uppercase;
+  font-size: 20px
+}
+.section-tittle h2 {
+  font-size: 48px;
+  display: block;
+  font-weight: 500;
+  margin-bottom: 30px
+}
+.section-tittle p{
+  /* font-size: medium; */
+  font-family: 'Montserrat';
+}
+.office-environments .environments-wrapper.environments-wrapper2 {
+  margin-top: 0px
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .office-environments .environments-wrapper {
+      margin-top: 0px;
+      background-image: none !important;
+      padding-top: 50px;
+      padding-bottom: 50px
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .office-environments .environments-wrapper {
+      margin-top: 0px;
+      background-image: none !important;
+      padding-top: 50px;
+      padding-bottom: 50px
+  }
+}
+
+@media (max-width: 575px) {
+  .office-environments .environments-wrapper {
+      margin-top: 0px;
+      background-image: none !important;
+      padding-top: 50px;
+      padding-bottom: 50px
+  }
+}
+
+.office-environments .office-pera {
+  padding: 85px 81px 68px 72px;
+  background: #ffff
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .office-environments .office-pera {
+      margin-top: 20px
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .office-environments .office-pera {
+      padding: 65px 46px 24px 50px
+  }
+}
+
+@media (max-width: 575px) {
+  .office-environments .office-pera {
+      padding: 44px 15px 1px 15px
+  }
+}
+
 @keyframes fadeInRight {
   0% {
     opacity: 0;
