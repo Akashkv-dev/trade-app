@@ -45,3 +45,20 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+function visionScroll(){
+    // const vision = document.getElementById('vision')
+    const elements = document.querySelectorAll('.vision');
+            elements.forEach(element => {
+                const bounding = element.getBoundingClientRect();
+                if (bounding.top >= 0 && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
+                    element.classList.add('in-view');
+                } else {
+                    element.classList.remove('in-view');
+                }
+            });
+}
+
+document.addEventListener('scroll', visionScroll);
+document.addEventListener('DOMContentLoaded', visionScroll);
+// visionScroll()
