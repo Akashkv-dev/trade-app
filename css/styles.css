@@ -12841,11 +12841,14 @@ p {
   text-transform: uppercase;
   animation: fadeInRight 2.5s ease-in-out;
 }
+.container{
+ overflow: hidden;
+}
 .vision{
   font-size: 2rem;
   opacity: 0;
-  transform: translateX(400px);
-  transition: opacity 2.5s ease-in-out, transform 1.0s ease-in-out;
+  transform: translateX(100%);
+  transition: opacity 2.5s ease-in-out, transform 2.0s ease-in-out;
 }
 .vision.in-view{
   opacity: 1;
