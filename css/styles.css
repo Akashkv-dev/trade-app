@@ -12833,10 +12833,12 @@ p {
   font-size: 2rem;
   margin-bottom: 1rem;
   animation: fadeInRight 2s ease-in-out;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .masthead-heading {
   font-size: 4rem;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   animation: fadeInRight 2.5s ease-in-out;
