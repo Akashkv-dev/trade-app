@@ -4269,7 +4269,7 @@ fieldset:disabled .btn {
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
   --bs-navbar-color: rgba(0, 0, 0, 0.55);
-  --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
+  --bs-navbar-hover-color: rgba(255, 255, 255, 0.7);
   --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
   --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
   --bs-navbar-brand-padding-y: 0.3125rem;
@@ -12723,13 +12723,13 @@ p {
   }
 
   #mainNav .navbar-brand img {
-    height: 3rem;
+    height: 3.5rem;
     transition: height 0.3s ease-in-out;
   }
 
   #mainNav.navbar-shrink {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     background-color: #212529;
   }
 
@@ -12739,7 +12739,7 @@ p {
 
   #mainNav.navbar-shrink .navbar-brand svg,
   #mainNav.navbar-shrink .navbar-brand img {
-    height: 2.5rem;
+    height: 3.5rem;
   }
 
   #mainNav .navbar-nav .nav-item {
