@@ -12677,11 +12677,7 @@ p {
 }
 
 #mainNav {
-<<<<<<< HEAD
-  padding-top: 1rem;
-=======
   padding-top: 0.5rem;
->>>>>>> eb699b85295b4e78e64213a515c930bd75e9ed11
   /* padding-bottom: 1rem; */
   background-color: #e9ecef;
 }
@@ -12720,7 +12716,7 @@ p {
 
 @media (min-width: 992px) {
   #mainNav {
-    /* padding-top: 1.5rem; */
+    padding-top: 1rem;
     /* padding-bottom: 1.5rem; */
     border: none;
     background-color: #e9ecef; 
@@ -13462,15 +13458,14 @@ section#contact form#contactForm :-ms-input-placeholder {
   opacity: 1;
   transform: translateX(0);
 }
-<<<<<<< HEAD
+
+
 .addressenter{
   margin-top: 30px;
   padding: 5px;
   margin-bottom: 20px;
 }
-<<<<<<< HEAD
-=======
-=======
+
 .client{
   display: flex;
   flex-wrap: wrap;
@@ -13487,32 +13482,33 @@ section#contact form#contactForm :-ms-input-placeholder {
   opacity: 1;
   transform: translateY(0);
 }
->>>>>>> eb699b85295b4e78e64213a515c930bd75e9ed11
 
-/* Media Queries for responsiveness */
+/* Styles for screens smaller than 1200px */
 @media (max-width: 1200px) {
   .service, .service2 {
     width: 90%;
-  }
-  .service2 {
-    margin-left: 10%;
+    margin-left: 5%;
   }
 }
 
+/* Styles for screens smaller than 768px */
 @media (max-width: 768px) {
   .service, .service2 {
     flex-direction: column;
     height: auto;
     text-align: center;
     padding: 20px;
+    justify-content: center;
+    margin: 0 auto; /* Centering the content */
+    
   }
 
   .service {
     border-radius: 0px 0px 50px 50px;
+    margin-bottom: 20px;
   }
 
   .service2 {
-    margin-left: 0;
     border-radius: 50px 50px 0px 0px;
   }
 
@@ -13521,12 +13517,16 @@ section#contact form#contactForm :-ms-input-placeholder {
   }
 }
 
+/* Styles for screens smaller than 576px */
 @media (max-width: 576px) {
   .service, .service2 {
     width: 100%;
+    justify-content: center;
+    margin: 0 auto; /* Centering the content */
+  }
+  .service{
+    margin-bottom: 20px;
   }
 }
-<<<<<<< HEAD
->>>>>>> d67b7ea (services updation)
-=======
->>>>>>> eb699b85295b4e78e64213a515c930bd75e9ed11
+
+
