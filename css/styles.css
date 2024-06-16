@@ -13394,8 +13394,8 @@ section#contact form#contactForm :-ms-input-placeholder {
   
 }
 
-.service{
-  background-color: #0aa2c0;
+.service {
+  background-color: #1D6F63;
   width: 75%;
   height: 100px;
   text-align: center;
@@ -13407,14 +13407,25 @@ section#contact form#contactForm :-ms-input-placeholder {
   overflow: hidden;
   transform: translateX(-100%);
   transition: transform 2s ease-out, opacity 1s ease-out;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
+
+.service-sub {
+  color: white;
+  width: 30rem;
+}
+
 .service.visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-.service2{
-  background-color: yellow;
+.service2 {
+  background-color: #dee2e6;
   width: 75%;
   margin-left: 25%;
   height: 100px;
@@ -13427,8 +13438,56 @@ section#contact form#contactForm :-ms-input-placeholder {
   overflow: hidden;
   transform: translateX(100%);
   transition: transform 2s ease-out, opacity 1s ease-out;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
+
+.service-sub2 {
+  width: 30rem;
+  color: black;
+}
+
 .service2.visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+  .service, .service2 {
+    width: 90%;
+  }
+  .service2 {
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .service, .service2 {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .service {
+    border-radius: 0px 0px 50px 50px;
+  }
+
+  .service2 {
+    margin-left: 0;
+    border-radius: 50px 50px 0px 0px;
+  }
+
+  .service-sub, .service-sub2 {
+    width: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .service, .service2 {
+    width: 100%;
+  }
 }
