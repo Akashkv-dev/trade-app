@@ -13,14 +13,22 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
   <link href="css/styles.css" rel="stylesheet" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+      (function () {
+          emailjs.init({
+              publicKey: "j5L9sWJyPOA7yRwXB",
+          });
+      })();
+  </script>
 </head>
 
 <body id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container-fluid">
-      <a class="navbar-brand" style="color: white" href=""><img
-          src="assets/img/logos/gdwlogo1.png" alt="..." /></a>
+      <a class="navbar-brand" style="color: white" href=""><img src="assets/img/logos/gdwlogo1.png" alt="..." /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
@@ -51,7 +59,7 @@
       <div class="carousel-item active">
         <div class="container">
           <div class="carousel-caption text-start">
-            <div class="masthead-subheading">ANYTHING FROM ANYWHERE</div>
+            <div class="masthead-subheading mt-5">ANYTHING FROM ANYWHERE</div>
             <div class="masthead-heading text-uppercase">
               WE GOT YOU COVERED
             </div>
@@ -237,11 +245,9 @@
               }
             });
           }
-
           window.addEventListener('scroll', checkVisibility);
           checkVisibility(); // Initial check
         });
-
       </script>
 
     </div>
@@ -475,11 +481,11 @@
     <div class="container">
       <div class="text-center ">
         <h2 class="section-heading text-uppercase">MAJOR CLIENTS</h2>
-        <!-- <p class="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
-            </p> -->
+        <p class="section-subheading text-muted">
+          " Proudly serving top-tier businesses with our premier service"
+            </p>
       </div>
-      <div class="row align-items-center mt-5">
+      <div class="row client mt-5">
         <div class="col-6 col-md-3 col-sm-6 my-3">
           <a href="#!"><img class=" d-block mx-auto w-50" src="assets/img/clients/c1.png" alt="..."
               aria-label="Microsoft Logo" /></a>
@@ -507,97 +513,159 @@
       </div>
     </div>
   </div>
+  <script>
+    // Create an Intersection Observer instance
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('show');
+                }, index * 500); // Delay each image by 200ms
+                observer.unobserve(entry.target); // Stop observing once the animation has been applied
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    });
+  
+    // Observe each client logo
+    document.querySelectorAll('.client img').forEach(img => {
+        observer.observe(img);
+    });
+  </script>
   <!-- Contact-->
   <section class="page-section" id="contact">
     <div class="container">
       <div class="text-center">
         <h2 class="section-heading text-uppercase">Contact Us</h2>
-        <h3 class="section-subheading text-muted">
-          Lorem ipsum dolor sit amet consectetur.
-        </h3>
       </div>
-      <!-- * * * * * * * * * * * * * * *-->
-      <!-- * * SB Forms Contact Form * *-->
-      <!-- * * * * * * * * * * * * * * *-->
-      <!-- This form is pre-integrated with SB Forms.-->
-      <!-- To make this form functional, sign up at-->
-      <!-- https://startbootstrap.com/solution/contact-forms-->
-      <!-- to get an API token!-->
-      <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+      <form id="contactForm" onsubmit="sendMail(event)">
         <div class="row align-items-stretch mb-5">
           <div class="col-md-6">
             <div class="form-group">
               <!-- Name input-->
-              <input class="form-control" id="name" type="text" placeholder="Your Name *"
-                data-sb-validations="required" />
-              <div class="invalid-feedback" data-sb-feedback="name:required">
-                A name is required.
-              </div>
+              <input class="form-control" id="name" name="name" type="text" placeholder="Your Name *" required/>
             </div>
             <div class="form-group">
               <!-- Email address input-->
-              <input class="form-control" id="email" type="email" placeholder="Your Email *"
-                data-sb-validations="required,email" />
-              <div class="invalid-feedback" data-sb-feedback="email:required">
-                An email is required.
-              </div>
-              <div class="invalid-feedback" data-sb-feedback="email:email">
-                Email is not valid.
-              </div>
+              <input class="form-control" id="email" name="email" type="email" placeholder="Your Email *"
+                 required/>
             </div>
             <div class="form-group mb-md-0">
-              <!-- Phone number input-->
-              <input class="form-control" id="phone" type="tel" placeholder="Your Phone *"
-                data-sb-validations="required" />
-              <div class="invalid-feedback" data-sb-feedback="phone:required">
-                A phone number is required.
-              </div>
+              <!-- Subject input-->
+              <input class="form-control" id="subject" name="subject" type="text" placeholder="Subject *" required/>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group form-group-textarea mb-md-0">
               <!-- Message input-->
-              <textarea class="form-control" id="message" placeholder="Your Message *"
-                data-sb-validations="required"></textarea>
-              <div class="invalid-feedback" data-sb-feedback="message:required">
-                A message is required.
-              </div>
+              <textarea class="form-control" name="message" id="message" placeholder="Your Message *" required></textarea>
             </div>
           </div>
         </div>
-        <!-- Submit success message-->
-        <!---->
-        <!-- This is what your users will see when the form-->
-        <!-- has successfully submitted-->
-        <div class="d-none" id="submitSuccessMessage">
-          <div class="text-center text-white mb-3">
-            <div class="fw-bolder">Form submission successful!</div>
-            To activate this form, sign up at
-            <br />
-            <a
-              href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-          </div>
-        </div>
-        <!-- Submit error message-->
-        <!---->
-        <!-- This is what your users will see when there is-->
-        <!-- an error submitting the form-->
-        <div class="d-none" id="submitErrorMessage">
-          <div class="text-center text-danger mb-3">
-            Error sending message!
-          </div>
-        </div>
-        <!-- Submit Button-->
         <div class="text-center">
-          <button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">
+          <button class="btn btn-primary btn-xl text-uppercase" type="submit">
             Send Message
           </button>
         </div>
       </form>
     </div>
+    <script>
+      function sendMail(event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          let params = {
+              name: document.getElementById("name").value,
+              email: document.getElementById("email").value,
+              subject: document.getElementById("subject").value,
+              message: document.getElementById("message").value, // Corrected typo: 'mwssage' to 'message'
+          }
+          emailjs.send("service_1752hml", "template_1l1at7j", params).then(alert("Successfully Send Email"));
+      }
+  </script>
   </section>
+
+  <div class="container addressenter mt-4">
+    <div class="row">
+      <div class="col-lg-5 col-md-6 col-sm-6">
+        <h5>Address : </h5>
+        <ul>
+          <li>GOODWILL GENERAL TRADING LLC </li>
+          <li>hamdan street, Abudhabi</li>
+          <li>+971561352426</li>
+          <li>www.gdwuae.com</li>
+          <li>info@gwuae.com</li>
+        </ul>
+      </div>
+      <div class="col-lg-7 col-md-6 col-sm-6">
+        <div class="single-footer-caption mb-50">
+          <div class="footer-tittle">
+            <iframe
+              src="https://maps.google.com/maps?q=Hamdan Bin Mohammed St&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              frameborder="0" style="width: 100%; height: 200px; border:0;" allowfullscreen="" aria-hidden="false"
+              tabindex="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-4 mt-3">
+    <div class="row justify-content-center text-center">
+      <div class="col-12">
+        <div class="single-footer-caption">
+          <div class="single-footer-caption">
+            <!-- logo -->
+            <div class="footer-logo">
+              <a href="index.html" class="d-none d-sm-block">
+                <img src="assets/img/logos/gdwlogo1.png" class="w-25" alt="Green Belt Final Logo">
+              </a>
+              <a href="index.html" class="d-block d-sm-none">
+                <img src="assets/img/logos/gdwlogo1.png" class="w-50" alt="Green Belt Final Logo">
+              </a>
+            </div>
+
+            <div class="footer-tittle">
+              <div class="footer-pera">
+                <p>"Reliable trading services for a competitive edge."</p>
+              </div>
+              <div class="">
+                <a class="btn btn-dark btn-social mx-2" href="" aria-label="Instagram"><i
+                    class="fab fa-instagram"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=971561352426" target="_blank" class="btn btn-dark btn-social mx-2" aria-label="Whatsapp"><i
+                    class="fab fa-whatsapp"></i></a>
+                <!-- <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer-bottom area -->
+  <footer class="footer py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 ">
+          <div class=" text-center">
+            <div class="link-dark text-decoration-none me-3">
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved
+              by
+              <!-- <i class="fa fa-heart" aria-hidden="true"></i> -->
+              <a href="https://gdwuae.com/" target="_blank" style="color: blue;">good will</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End-->
   <!-- Footer-->
-  <footer class="footer py-4">
+  <!-- <footer class="footer py-4">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-4 text-lg-start">
@@ -614,7 +682,7 @@
         </div>
       </div>
     </div>
-  </footer>
+  </footer> -->
   <!-- Portfolio Modals-->
   <!-- Portfolio item 1 modal popup-->
   <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
