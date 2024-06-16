@@ -12677,7 +12677,11 @@ p {
 }
 
 #mainNav {
+<<<<<<< HEAD
   padding-top: 1rem;
+=======
+  padding-top: 0.5rem;
+>>>>>>> eb699b85295b4e78e64213a515c930bd75e9ed11
   /* padding-bottom: 1rem; */
   background-color: #e9ecef;
 }
@@ -13464,7 +13468,26 @@ section#contact form#contactForm :-ms-input-placeholder {
   padding: 5px;
   margin-bottom: 20px;
 }
+<<<<<<< HEAD
 =======
+=======
+.client{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.client img {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 2s ease-out, opacity 1s ease-out;
+}
+
+.client img.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+>>>>>>> eb699b85295b4e78e64213a515c930bd75e9ed11
 
 /* Media Queries for responsiveness */
 @media (max-width: 1200px) {
@@ -13503,4 +13526,7 @@ section#contact form#contactForm :-ms-input-placeholder {
     width: 100%;
   }
 }
+<<<<<<< HEAD
 >>>>>>> d67b7ea (services updation)
+=======
+>>>>>>> eb699b85295b4e78e64213a515c930bd75e9ed11
