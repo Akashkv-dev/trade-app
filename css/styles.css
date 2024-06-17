@@ -12716,7 +12716,7 @@ p {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1rem;
+    padding-top: 0.2rem;
     /* padding-bottom: 1.5rem; */
     border: none;
     background-color: #e9ecef; 
