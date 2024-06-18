@@ -13342,18 +13342,64 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .aboutdiv1 {
+  position: relative;
   background-color: black;
   text-align: center;
   align-content: center;
-  /* border-radius: 5px; */
-  /* border: #0baccc solid; */
-  /* margin: 10px; */
   padding: 20px;
   margin-right: 4px;
+  overflow: hidden;
+  padding-top: 4rem;
+  /* width: 100%; Ensure the divs are square based on their container */
+  /* padding-top: 100%; Creates a square aspect ratio */
+}
+
+.aboutdiv1::before,
+.aboutdiv1::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #1D6F63;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  animation: moveTriangles 8s infinite;
+  z-index: 0; /* Ensure triangles are behind the text */
+}
+
+.aboutdiv1::before {
+  top: 0;
+  left: 0;
+}
+
+.aboutdiv1::after {
+  bottom: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+@keyframes moveTriangles {
+  0%, 100% {
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+  25% {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+  50% {
+    clip-path: polygon(100% 100%, 0 100%, 0 0);
+  }
+  75% {
+    clip-path: polygon(0 100%, 0 0, 100% 0);
+  }
 }
 
 .aboutdiv1 h5 {
   color: white;
   font-size: larger;
   font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Ensure text is above the triangles */
+  margin: 0; /* Remove default margin */
 }
