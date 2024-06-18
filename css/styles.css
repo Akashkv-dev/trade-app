@@ -751,7 +751,7 @@ progress {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
@@ -12643,6 +12643,7 @@ p {
   font-size: 2.5rem;
   margin-top: 0;
   margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .page-section h3.section-subheading,
@@ -12652,6 +12653,10 @@ p {
   font-style: italic;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   margin-bottom: 4rem;
+}
+.sister-company {
+  font-size: 2.5rem;
+  font-family: 'Montserrat', sans-serif; 
 }
 
 @media (min-width: 768px) {
@@ -13340,14 +13345,15 @@ section#contact form#contactForm :-ms-input-placeholder {
   background-color: black;
   text-align: center;
   align-content: center;
-  border-radius: 5px;
-  border: #0baccc solid;
+  /* border-radius: 5px; */
+  /* border: #0baccc solid; */
   /* margin: 10px; */
   padding: 20px;
+  margin-right: 4px;
 }
 
 .aboutdiv1 h5 {
-  color: wheat;
+  color: white;
   font-size: larger;
   font-weight: 900;
 }
