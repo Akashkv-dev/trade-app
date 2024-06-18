@@ -62,3 +62,28 @@ function visionScroll(){
 document.addEventListener('scroll', visionScroll);
 document.addEventListener('DOMContentLoaded', visionScroll);
 // visionScroll()
+document.addEventListener('DOMContentLoaded', function () {
+    const hexagonContainer = document.querySelector('.hexagon-container');
+    const hexagons = document.querySelectorAll('.hexagon');
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function onScroll() {
+        if (isElementInViewport(hexagonContainer)) {
+            hexagons.forEach(hexagon => {
+                hexagon.classList.add('rotate');
+            });
+            window.removeEventListener('scroll', onScroll);
+        }
+    }
+
+    window.addEventListener('scroll', onScroll);
+});
