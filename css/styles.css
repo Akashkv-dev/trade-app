@@ -13425,7 +13425,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 .aboutDiv-container{
   display: flex;
   justify-content: space-evenly;
-  gap: 10px;
+  /* gap: 10px; */
   flex-wrap: wrap;
   margin-top: 20px;
 }
