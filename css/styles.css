@@ -12695,9 +12695,12 @@ p {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: uppercase;
   font-weight: 700;
+  color: black;
+  border: 1px solid;
 }
 
 #mainNav .navbar-brand {
+  padding-top: 0.2rem;
   color: #ffc800;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
@@ -12706,6 +12709,7 @@ p {
 }
 
 #mainNav .navbar-brand img {
+  
   height: 2.5rem;
 }
 
@@ -12732,6 +12736,7 @@ p {
 
   #mainNav .navbar-brand {
     font-size: 1.5em;
+    
     transition: font-size 0.3s ease-in-out;
   }
 
@@ -12747,11 +12752,13 @@ p {
   }
 
   #mainNav.navbar-shrink .navbar-brand {
+    
     font-size: 1.25em;
   }
 
   #mainNav.navbar-shrink .navbar-brand svg,
   #mainNav.navbar-shrink .navbar-brand img {
+    
     height: 3.5rem;
   }
 
