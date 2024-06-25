@@ -13280,6 +13280,20 @@ section#contact form#contactForm :-ms-input-placeholder {
   align-items: center;
   cursor: pointer;
 }
+.text-center.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fixed-title {
+  margin-right: 10px; /* Adjust the margin as needed for spacing */
+}
+
+/* Ensure the typewriting effect does not break the layout */
+.typewrite {
+  white-space: nowrap;
+}
 
 .service-sub2 {
   width: 30rem;
@@ -13292,6 +13306,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 .service-icon {
   font-size: 2rem;
+  margin: 1rem;
 }
 
 .addressenter {
