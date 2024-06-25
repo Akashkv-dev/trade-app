@@ -13335,7 +13335,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 /* Styles for screens smaller than 1200px */
 @media (max-width: 1200px) {
-
+  
   .service,
   .service2 {
     width: 90%;
@@ -13371,11 +13371,18 @@ section#contact form#contactForm :-ms-input-placeholder {
   .service-sub2 {
     width: auto;
   }
+
+  
 }
 
 /* Styles for screens smaller than 576px */
 @media (max-width: 576px) {
-
+  .expertise-h2{
+    font-size: 1.5rem !important;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  }
   .service,
   .service2 {
     width: 100%;
@@ -13386,6 +13393,9 @@ section#contact form#contactForm :-ms-input-placeholder {
 
   .service {
     margin-bottom: 20px;
+  }
+  .safety{
+    margin-left:0 !important;
   }
 }
 
