@@ -361,21 +361,34 @@
   <script>
     // Create an Intersection Observer instance
     const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('show');
-                }, index * 500); // Delay each image by 200ms
-                observer.unobserve(entry.target); // Stop observing once the animation has been applied
-            }
-        });
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('show');
+          }, index * 700); // Delay each image by 700ms
+          observer.unobserve(entry.target); // Stop observing once the animation has been applied
+        }
+      });
     }, {
-        threshold: 0.1 // Trigger when 10% of the element is visible
+      threshold: 0.1 // Trigger when 10% of the element is visible
     });
   
-    // Observe each client logo
-    document.querySelectorAll('.client img').forEach(img => {
-        observer.observe(img);
+    // Shuffle the client logos
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+  
+    // Select and shuffle client logos
+    const clientImages = document.querySelectorAll('.client img');
+    const shuffledImages = shuffle(Array.from(clientImages));
+  
+    // Observe each shuffled client logo
+    shuffledImages.forEach((img, index) => {
+      observer.observe(img);
     });
   </script>
   <!-- Contact-->
