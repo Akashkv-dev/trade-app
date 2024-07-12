@@ -12782,13 +12782,13 @@ p {
 }
 
 .carousel-item:nth-child(2) {
-  background-image: url('../assets//img/medical.jpg');
+  background-image: url('../assets//img/banner/logo_make_11_06_2023_373.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .carousel-item:nth-child(3) {
-  background-image: url('../assets//img/cloths.jpg');
+  background-image: url('../assets/img/banner/closeuo-colorful-textile-fabric-shop.jpg');
   background-size: cover;
   background-position: center;
 }
